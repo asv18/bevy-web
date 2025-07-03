@@ -4,10 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = "0.16.1"
+bevy = { version = "0.16.1", features = ["webgl2"] }
 
 [target.wasm32-unknown-unknown]
 runner = "wasm-server-runner"
-
-[profile.dev]
-opt-level = 1
