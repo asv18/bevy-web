@@ -1,17 +1,26 @@
 use bevy::prelude::*;
+use leptos::prelude::*;
 
 fn main() {
-    App::new()
-        .add_plugins(DefaultPlugins.set(WindowPlugin {
-            primary_window: Some(Window {
-                canvas: Some("#bevy".into()),
+    leptos::mount::mount_to_body(|| view! {
+        <p>
+            "wassup"
+        </p>
+    });
+
+    wasm_bindgen_futures::spawn_local(async {
+        App::new()
+            .add_plugins(DefaultPlugins.set(WindowPlugin {
+                primary_window: Some(Window {
+                    canvas: Some("#bevy".into()),
+                    ..default()
+                }),
                 ..default()
-            }),
-            ..default()
-        }))
-        .add_systems(Startup, setup)
-        // .add_plugins(HelloPlugin)
-    .run();
+            }))
+            .add_systems(Startup, setup)
+            // .add_plugins(HelloPlugin)
+        .run();
+    });
 }
 
 

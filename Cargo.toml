@@ -5,6 +5,8 @@ edition = "2024"
 
 [dependencies]
 bevy = { version = "0.16.1", features = ["webgl2"] }
+leptos = { version = "0.8.2", features = ["csr"] }
+wasm-bindgen-futures = "0.4.50"
 
 [target.wasm32-unknown-unknown]
 runner = "wasm-server-runner"
